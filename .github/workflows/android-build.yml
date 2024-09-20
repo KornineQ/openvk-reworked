@@ -29,6 +29,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew # Add this line to make gradlew executable
+        
       - name: Build with Gradle
         run: ./gradlew build # Replace with your build command
